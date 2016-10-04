@@ -28,9 +28,8 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['author', 'text', 'date'], 'required'],
+            [['author', 'text'], 'required'],
             [['text'], 'string'],
-            [['date'], 'safe'],
             [['author'], 'string', 'max' => 255],
         ];
     }
@@ -46,5 +45,11 @@ class Comment extends \yii\db\ActiveRecord
             'text' => 'Text',
             'date' => 'Date',
         ];
+    }
+
+    public function save($runValidation = true, $attributeNames = null){
+        $this->date = date('Y-m-d H:i:s');
+
+        return parent::save();
     }
 }
