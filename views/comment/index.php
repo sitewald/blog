@@ -13,23 +13,22 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="comment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
         <?= Html::a('Create Comment', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        'showHeader' => false,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'author',
+            [
+                'attribute' => 'author',
+                'contentOptions' => ['style' => 'width: 200px']
+            ],
             'text:ntext',
-            'date',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute' => 'date',
+                'contentOptions' => ['style' => 'width: 180px']
+            ]
         ],
     ]); ?>
 </div>
