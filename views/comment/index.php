@@ -13,22 +13,31 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="comment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <p>
-        <?= Html::a('Create Comment', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'showHeader' => false,
+        'summary' => false,
+        'options' => [
+            'class' => 'comment-container'
+        ],
+        'rowOptions' => [
+            'class' => 'comment-row'
+        ],
         'columns' => [
             [
                 'attribute' => 'author',
-                'contentOptions' => ['style' => 'width: 200px']
+                'contentOptions' => ['class' => 'td-author']
             ],
             'text:ntext',
             [
                 'attribute' => 'date',
-                'contentOptions' => ['style' => 'width: 180px']
+                'contentOptions' => ['class' => 'td-date']
             ]
         ],
     ]); ?>
+
+    <p>
+        <?= Html::a('Create Comment', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 </div>

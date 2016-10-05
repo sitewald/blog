@@ -1,0 +1,24 @@
+
+
+.comment-container table{
+	border: none;
+}
+
+.comment-row td{
+	display: block;
+	background-color: #fff;
+}
+
+.comment-row .td-author{
+	width: 200px; 
+	border: none;
+	font-weight: bold;
+	font-size: 16px;
+	background-color: #337AB7;
+	color: #fff;
+}
+
+.comment-row .td-date{
+	width: 180px;
+	border: none;
+}

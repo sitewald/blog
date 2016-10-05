@@ -49,7 +49,7 @@ class CommentSearch extends Comment
             'query' => $query,
         ]);
 
-        $dataProvider->pagination->pageSize = 5;
+        $dataProvider->pagination->pageSize = Yii::$app->params['pageSize'];
 
         $this->load($params);
 
