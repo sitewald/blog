@@ -1,4 +1,10 @@
+body{
+	background-color: #4F504A;
+}
 
+.main-header{
+	padding: 20px;
+}
 
 .comment-container table{
 	border: none;
@@ -21,4 +27,19 @@
 .comment-row .td-date{
 	width: 180px;
 	border: none;
+}
+
+.footer {
+    height: 60px;
+    background-color: #337AB7;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.btn-back{
+	margin-right: 20px;
+}
+
+.label-create{
+	color: #5CB85C;
 }

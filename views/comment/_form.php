@@ -12,11 +12,19 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'author', [ 'labelOptions' => [
+    	'class' => 'label-create'
+    ]])->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'text', [ 'labelOptions' => [
+    	'class' => 'label-create'
+    ]])->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
+        <?php echo Html::a('Back', '/', [
+	    	'class' => 'btn btn-primary btn-back'
+	    ]) ?>
+
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
